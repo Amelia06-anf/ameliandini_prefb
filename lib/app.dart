@@ -1,4 +1,5 @@
 import 'package:amelia_prefb/firestore.dart';
+import 'package:amelia_prefb/firestorex.dart';
 import 'package:amelia_prefb/home.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,6 @@ class MyApp extends StatelessWidget {
           ),
           useMaterial3: true,
         ),
-        home: const FirestoreScreen());
+        home: const FirestoreX());
   }
 }
