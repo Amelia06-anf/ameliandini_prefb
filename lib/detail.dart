@@ -1,3 +1,4 @@
+import 'package:amelia_prefb/ctrl.dart';
 import 'package:amelia_prefb/detailmodel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -10,12 +11,6 @@ class Detail extends StatelessWidget {
     required this.id,
   }) : super(key: key);
 
-  Future<DocumentSnapshot> getDoc() async {
-    final result = await FirebaseFirestore.instance.collection('userDetail').doc(id).get();
-    // debugPrint(result.data().toString());
-    return result;
-  }
-
   final String id;
 
   @override
@@ -25,7 +20,7 @@ class Detail extends StatelessWidget {
           title: const Text('Detail'),
         ),
         body: FutureBuilder(
-          future: getDoc(),
+          future: getDoc(id),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Text('Loading....');
