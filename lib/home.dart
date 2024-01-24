@@ -1,3 +1,4 @@
+import 'package:amelia_prefb/firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -26,11 +27,6 @@ class HomeScreen extends StatelessWidget {
               style: TextStyle(fontSize: 20),
             ),
             const SizedBox(height: 10),
-            const Text(
-              'Isi konten aplikasi Anda di sini.',
-              style: TextStyle(fontSize: 16),
-            ),
-            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 _launchURL("https://github.com/Amelia06-anf/ameliandini_prefb");

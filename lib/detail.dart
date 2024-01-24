@@ -1,0 +1,53 @@
+import 'package:amelia_prefb/detailmodel.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+
+import 'package:amelia_prefb/firestorex.dart';
+
+class Detail extends StatelessWidget {
+  const Detail({
+    Key? key,
+    required this.id,
+  }) : super(key: key);
+
+  Future<DocumentSnapshot> getDoc() async {
+    final result = await FirebaseFirestore.instance.collection('userDetail').doc(id).get();
+    // debugPrint(result.data().toString());
+    return result;
+  }
+
+  final String id;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('Detail'),
+        ),
+        body: FutureBuilder(
+          future: getDoc(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Text('Loading....');
+            }
+            if (snapshot.hasData) {
+              final x = snapshot.data!.data()! as Map<String, dynamic>;
+              final data = DetailModel.fromMap(x);
+              return Column(
+                children: [
+                  // Text(snapshot.data!['nama'].toString()),
+                  // Text(snapshot.data!['alamat'].toString()),
+                  // Text(snapshot.data!['umur'].toString()),
+                  // Text(snapshot.data!['hobi'].toString()),
+                  Text(data.nama),
+                  Text(data.umur.toString()),
+                  Text(data.hobi),
+                  Text(data.alamat),
+                ],
+              );
+            }
+            return const Text('text');
+          },
+        ));
+  }
+}
