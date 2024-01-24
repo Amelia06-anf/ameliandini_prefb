@@ -17,7 +17,11 @@ class Detail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Detail'),
+          title: const Text(
+            'Detail',
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: const Color.fromARGB(255, 141, 127, 106),
         ),
         body: FutureBuilder(
           future: getDoc(id),
