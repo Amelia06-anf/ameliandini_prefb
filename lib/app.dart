@@ -17,6 +17,6 @@ class MyApp extends StatelessWidget {
           ),
           useMaterial3: true,
         ),
-        home: const FirestoreX());
+        home: const HomeScreen());
   }
 }
