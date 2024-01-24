@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "614040374278",
+    "project_id": "amelia-prefb",
+    "storage_bucket": "amelia-prefb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:614040374278:android:eecf7ef1a27500f76a0787",
+        "android_client_info": {
+          "package_name": "com.example.amelia_prefb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1Y0RnDTi0bWlfP7yTyPJ0n-to9J3z0Vo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
